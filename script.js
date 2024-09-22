@@ -7,14 +7,19 @@ let myLeads = []
 saveBtn.addEventListener ("click", function() {
     myLeads.push(inputEl.value)
     renderLeads()
-    inputEl.textContent.value = ""
+    inputEl.value = ""
 })
 
 
 function renderLeads() {
     let listItems = ""
     myLeads.forEach(lead => {
-        listItems += "<li>" + lead + "</li>"
+        // listItems += '<li><a href="' + lead + '" target="_blank">' + lead + '</a></li>'
+        listItems += `
+                    <li>
+                        <a href="${lead}" target="_blank">${lead}</a>
+                    </li>`
+
         console.log(lead)
     })
 
