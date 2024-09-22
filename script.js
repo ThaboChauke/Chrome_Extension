@@ -15,7 +15,6 @@ if (leadsFromLocalStorage) {
     render(myLeads)
 }
 
-
 function render(array) {
     let listItems = ""
     array.forEach(item => {
