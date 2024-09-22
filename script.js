@@ -14,13 +14,10 @@ saveBtn.addEventListener ("click", function() {
 function renderLeads() {
     let listItems = ""
     myLeads.forEach(lead => {
-        // listItems += '<li><a href="' + lead + '" target="_blank">' + lead + '</a></li>'
         listItems += `
                     <li>
                         <a href="${lead}" target="_blank">${lead}</a>
                     </li>`
-
-        console.log(lead)
     })
 
     ulEl.innerHTML = listItems
