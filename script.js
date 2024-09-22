@@ -11,33 +11,30 @@ let myLeads = []
 
 if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
 
-saveBtn.addEventListener ("dblclick", function() {
+function render(array) {
+    let listItems = ""
+    array.forEach(item => {
+        listItems += `
+                    <li>
+                        <a href="${item}" target="_blank">${item}</a>
+                    </li>`
+    })
+    ulEl.innerHTML = listItems
+}
+
+saveBtn.addEventListener ("click", function() {
     myLeads.push(inputEl.value)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
+    render(myLeads)
 })
 
-
-deleteBtn.addEventListener("click", function() {
+deleteBtn.addEventListener("dblclick", function() {
     myLeads = []
     localStorage.clear()
-    renderLeads()
+    render(myLeads)
 })
-
-
-function renderLeads() {
-    let listItems = ""
-    myLeads.forEach(lead => {
-        listItems += `
-                    <li>
-                        <a href="${lead}" target="_blank">${lead}</a>
-                    </li>`
-    })
-
-    ulEl.innerHTML = listItems
-}
