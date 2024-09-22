@@ -1,5 +1,4 @@
-# Leads Tracker
-
+# Chrome Extension - Leads Tracker
 
 ## Project Overview
 
